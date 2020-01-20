@@ -64,6 +64,17 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/bluefeet/Object-Depot/issues"
+      },
+      "homepage" : "https://github.com/bluefeet/Object-Depot",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/bluefeet/Object-Depot.git",
+         "web" : "https://github.com/bluefeet/Object-Depot"
+      }
+   },
    "version" : "0.01",
    "x_authority" : "cpan:BLUEFEET",
    "x_serialization_backend" : "JSON::PP version 4.04",

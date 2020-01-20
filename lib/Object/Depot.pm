@@ -38,7 +38,7 @@ do not need to know how to create the objects in order to use them.
 The primary use case for this library is for storing the connection
 logic to external services and making these connections globally
 available to all application logic.  See L<Object::Depot::Singleton>
-for turnig your depot object into a global singleton.
+for turning your depot object into a global singleton.
 
 =cut
 
