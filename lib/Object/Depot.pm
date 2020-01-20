@@ -387,7 +387,7 @@ has export_name => (
 Turning this on causes L<Object::Depot::Singleton> to always export
 the L</export_name>, rather than only when listed in the import
 arguments. This is synonymous with the difference between
-L<Exporter>'s C<@EXPORT_OK> and L<@EXPORT>.
+L<Exporter>'s C<@EXPORT_OK> and C<@EXPORT>.
 
 =cut
 

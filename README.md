@@ -186,7 +186,7 @@ always_export => 1,
 Turning this on causes [Object::Depot::Singleton](https://metacpan.org/pod/Object::Depot::Singleton) to always export
 the ["export\_name"](#export_name), rather than only when listed in the import
 arguments. This is synonymous with the difference between
-[Exporter](https://metacpan.org/pod/Exporter)'s `@EXPORT_OK` and [@EXPORT](https://metacpan.org/pod/@EXPORT).
+[Exporter](https://metacpan.org/pod/Exporter)'s `@EXPORT_OK` and `@EXPORT`.
 
 # METHODS
 
