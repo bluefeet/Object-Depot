@@ -44,12 +44,24 @@ for turning your depot object into a global singleton.
 
 use Guard qw( guard );
 use Object::Depot::Singleton qw();
-use Object::Depot::Util qw( croak croakf );
+use Carp qw();
 use Role::Tiny qw();
 use Scalar::Util qw( blessed );
 use Sub::Name qw( subname );
 use Types::Common::String qw( NonEmptySimpleStr );
-use Types::Standard qw( Bool CodeRef Map HashRef Undef Object InstanceOf );
+use Types::Standard qw( Bool CodeRef HashRef Object InstanceOf );
+
+sub croak {
+    local $Carp::Internal{'Object::Depot'} = 1;
+    goto &Carp::croak;
+}
+
+sub croakf {
+    my $msg = shift;
+    $msg = sprintf( $msg, @_ );
+    @_ = ( $msg );
+    goto &croak;
+}
 
 use Moo;
 use namespace::clean;

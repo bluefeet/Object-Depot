@@ -2,6 +2,8 @@
 use Test2::V0;
 use strictures 2;
 
+use Test2::Require::Module 'Algorithm::Loops';
+
 use Algorithm::Loops qw( NestedLoops );
 use List::MoreUtils qw( zip );
 use Object::Depot;

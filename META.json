@@ -42,7 +42,6 @@
       },
       "runtime" : {
          "requires" : {
-            "Algorithm::Loops" : "0",
             "Carp" : "0",
             "Exporter" : "0",
             "Guard" : "0",

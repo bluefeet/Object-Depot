@@ -1,4 +1,3 @@
-requires 'Algorithm::Loops';
 requires 'Carp';
 requires 'Exporter';
 requires 'Guard';

@@ -18,11 +18,9 @@ available to all code in your application.  This role is ideal for
 creating global, simplified, and centralized access to shared
 resources such as connections to internal and cloud services.
 
-This role is applied to packages via L<Object::Depot/install>.
-
 =cut
 
-use Object::Depot::Util qw( croak );
+use Carp qw( croak );
 use Object::Depot;
 use Scalar::Util qw( blessed );
 use Sub::Name qw( subname );
@@ -63,9 +61,6 @@ sub depot {
 
 Takes an L<Object::Depot> object and saves it for later retrieval by
 L</depot>.
-
-Normally you will not be calling this directly, as this method is
-called by L<Object::Depot/install>.
 
 =cut
 
