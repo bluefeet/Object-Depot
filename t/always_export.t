@@ -9,7 +9,7 @@ use strictures 2;
     use Moo;
     with 'Object::Depot::Singleton';
 
-    __PACKAGE__->init(
+    __PACKAGE__->init_depot(
         class => 'Test::ae',
         export_name => 'myapp_test',
         always_export => 1,

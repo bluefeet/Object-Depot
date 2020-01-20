@@ -44,7 +44,7 @@ sub import {
 =head2 depot
 
 The L<Object::Depot> singleton object.  Will return C<undef> if
-L</init> has not yet been called.
+L</init_depot> has not yet been called.
 
 =cut
 
@@ -55,19 +55,19 @@ sub depot {
 
 =head1 CLASS METHODS
 
-=head2 init
+=head2 init_depot
 
-    __PACKAGE__->init( $depot );
+    __PACKAGE__->init_depot( $depot );
 
 Takes an L<Object::Depot> object and saves it for later retrieval by
 L</depot>.
 
 =cut
 
-sub init {
+sub init_depot {
     my $class = shift;
 
-    croak "init() has already been called on $class"
+    croak "init_depot() has already been called on $class"
         if $DEPOTS{ $class };
 
     if (@_==1 and blessed($_[0]) and $_[0]->isa('Object::Depot')) {
