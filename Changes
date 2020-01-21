@@ -2,7 +2,9 @@ Revision history for Perl extension Object-Depot.
 
 {{$NEXT}}
 
- - Rename init() to init_depot().
+ - Stop passing the depot object to the constructor as the
+   constructor has access to it via __PACKAGE__->depot().
+ - Renamed init() to init_depot().
 
 0.01 2020-01-20T20:32:07Z
 

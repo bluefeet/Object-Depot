@@ -57,8 +57,8 @@ will just return `undef`.
 
 ```perl
 constuctor => sub{
-    my ($depot, $args) = @_;
-    return $depot->class->new( $args );
+    my ($args) = @_;
+    return __PACKAGE__->depot->class->new( $args );
 },
 ```
 

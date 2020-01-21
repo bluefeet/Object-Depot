@@ -202,8 +202,8 @@ has class => (
 =head2 constructor
 
     constuctor => sub{
-        my ($depot, $args) = @_;
-        return $depot->class->new( $args );
+        my ($args) = @_;
+        return __PACKAGE__->depot->class->new( $args );
     },
 
 Set this to a code ref to control how objects get constructed.
@@ -224,17 +224,19 @@ has constructor => (
     isa => CodeRef,
 );
 
-my $class_constructor = sub{
-    my $depot = shift;
-    return $depot->class->new( @_ );
-};
-
 my $undef_constructor = sub{ undef };
 
 sub _build_constructor {
     my ($self) = @_;
-    return $class_constructor if $self->_has_class();
-    return $undef_constructor;
+
+    return $undef_constructor if !$self->_has_class();
+
+    return _build_class_constructor( $self->class() );
+}
+
+sub _build_class_constructor {
+    my ($class) = @_;
+    return sub{ $class->new( @_ ) };
 }
 
 =head2 type
@@ -522,7 +524,7 @@ sub _create {
 
     my $args = $self->_arguments( $key, $extra_args );
 
-    my $object = $self->constructor->( $self, $args );
+    my $object = $self->constructor->( $args );
 
     croakf(
         'Constructor returned an invalid value, %s, for key %s: %s',
