@@ -133,6 +133,7 @@ foreach my $method (qw(
 )) {
     my $sub = subname( $method => sub{
         my $class = shift;
+        local $Carp::CarpInternal{ (__PACKAGE__) } = 1;
         return $class->depot->$method( @_ );
     });
 
