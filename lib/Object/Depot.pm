@@ -1,5 +1,5 @@
 package Object::Depot;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 use strictures 2;
 
 =encoding utf8
