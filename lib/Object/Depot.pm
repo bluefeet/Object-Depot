@@ -431,7 +431,8 @@ sub fetch {
 sub _fetch {
     my ($self, $key) = @_;
 
-    my $object = $self->_objects->{$key};
+    my $object = $self->_injections->{ $key };
+    $object ||= $self->_objects->{$key};
     return $object if $object;
 
     return undef if !$self->_has_class();

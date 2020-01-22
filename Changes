@@ -2,6 +2,7 @@ Revision history for Perl extension Object-Depot.
 
 {{$NEXT}}
 
+ - Fixed injections.
  - Fixed singleton methods to point to the correct caller when
    throwing a Carp exception.
  - Stop passing the depot object to the constructor as the
