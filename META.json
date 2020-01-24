@@ -45,20 +45,20 @@
             "Carp" : "0",
             "Exporter" : "0",
             "Guard" : "1.023",
-            "List::MoreUtils" : "0.428",
-            "Moo" : "2.003006",
-            "Role::Tiny" : "2.001004",
+            "List::MoreUtils" : "0.410",
+            "Moo" : "2.003000",
+            "Role::Tiny" : "2.000005",
             "Scalar::Util" : "0",
-            "Sub::Name" : "0.25",
-            "Types::Common::String" : "1.008003",
-            "Types::Standard" : "1.008003",
+            "Sub::Name" : "0.21",
+            "Types::Common::String" : "1.002001",
+            "Types::Standard" : "1.002001",
             "namespace::clean" : "0.27",
-            "strictures" : "2.000006"
+            "strictures" : "2.000003"
          }
       },
       "test" : {
          "requires" : {
-            "Test2::V0" : "0.000127"
+            "Test2::V0" : "0.000126"
          }
       }
    },
