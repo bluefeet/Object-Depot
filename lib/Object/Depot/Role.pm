@@ -1,11 +1,11 @@
-package Object::Depot::Singleton;
+package Object::Depot::Role;
 use strictures 2;
 
 =encoding utf8
 
 =head1 NAME
 
-Object::Depot::Singleton - Expose an Object::Depot as a singleton.
+Object::Depot::Role - Expose Object::Depot as a global singleton.
 
 =head1 SYNOPSIS
 
@@ -13,10 +13,10 @@ See L<Object::Depot/SYNOPSIS>.
 
 =head1 DESCRIPTION
 
-This role rolls up an L<Object::Depot> into a singleton
-available to all code in your application.  This role is ideal for
-creating global, simplified, and centralized access to shared
-resources such as connections to internal and cloud services.
+This role rolls up an L<Object::Depot> into a singleton available to
+all code in your application.  This role is ideal for creating global,
+simplified, and centralized access to shared resources such as
+connections to internal and cloud services.
 
 =cut
 
@@ -50,7 +50,7 @@ L</init_depot> has not yet been called.
 
 sub depot {
     my ($class) = @_;
-    return %DEPOTS{ $class };
+    return $DEPOTS{ $class };
 }
 
 =head1 CLASS METHODS

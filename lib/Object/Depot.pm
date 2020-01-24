@@ -37,13 +37,12 @@ do not need to know how to create the objects in order to use them.
 
 The primary use case for this library is for storing the connection
 logic to external services and making these connections globally
-available to all application logic.  See L<Object::Depot::Singleton>
-for turning your depot object into a global singleton.
+available to all application logic.  See L<Object::Depot::Role> for
+turning your depot object into a global singleton.
 
 =cut
 
 use Guard qw( guard );
-use Object::Depot::Singleton qw();
 use Carp qw();
 use Role::Tiny qw();
 use Scalar::Util qw( blessed );
@@ -381,7 +380,7 @@ has default_arguments => (
 
     export_name => 'myapp_cache',
 
-Set the name of a function that L<Object::Depot::Singleton> will
+Set the name of a function that L<Object::Depot::Role> will
 export to importers of your depot package.
 
 Has no default.  If this is not set, then nothing will be exported.
@@ -398,7 +397,7 @@ has export_name => (
 
     always_export => 1,
 
-Turning this on causes L<Object::Depot::Singleton> to always export
+Turning this on causes L<Object::Depot::Role> to always export
 the L</export_name>, rather than only when listed in the import
 arguments. This is synonymous with the difference between
 L<Exporter>'s C<@EXPORT_OK> and C<@EXPORT>.

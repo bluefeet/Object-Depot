@@ -7,7 +7,7 @@ use strictures 2;
 {
     package MyApp::en;
     use Moo;
-    with 'Object::Depot::Singleton';
+    with 'Object::Depot::Role';
 
     __PACKAGE__->init_depot(
         class => 'Test::en',
