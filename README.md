@@ -93,7 +93,7 @@ injection_type => Object,
 
 By default objects that are injected (see ["inject"](#inject)) are validated
 against ["type"](#type).  Set this to a type that injections validate
-against if it needs to be difference (such as to support mock
+against if it needs to be different (such as to support mock
 objects).
 
 ## per\_process

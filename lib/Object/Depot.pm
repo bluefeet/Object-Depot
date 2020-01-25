@@ -237,7 +237,7 @@ sub _build_type {
 
 By default objects that are injected (see L</inject>) are validated
 against L</type>.  Set this to a type that injections validate
-against if it needs to be difference (such as to support mock
+against if it needs to be different (such as to support mock
 objects).
 
 =cut
