@@ -231,6 +231,27 @@ sub _build_type {
     return Object;
 }
 
+=head2 injection_type
+
+    injection_type => Object,
+
+By default objects that are injected (see L</inject>) are validated
+against L</type>.  Set this to a type that injections validate
+against if it needs to be difference (such as to support mock
+objects).
+
+=cut
+
+has injection_type => (
+    is  => 'lazy',
+    isa => InstanceOf[ 'Type::Tiny' ],
+);
+
+sub _build_injection_type {
+    my ($self) = @_;
+    return $self->type();
+}
+
 =head2 per_process
 
     per_process => 1,
@@ -578,8 +599,8 @@ sub inject {
     my $object = shift;
     croakf(
         'Invalid object passed to inject(): %s',
-        $self->type->get_message( $object ),
-    ) if !$self->type->check( $object );
+        $self->injection_type->get_message( $object ),
+    ) if !$self->injection_type->check( $object );
 
     croak qq[Already injected key, "$key", passed to inject()]
         if exists $self->_injections->{$key};

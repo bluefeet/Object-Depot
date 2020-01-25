@@ -85,6 +85,17 @@ are validated when they are stored.
 Defaults to `InstanceOf` ["class"](#class), if set.  If the class is not set
 then this defaults to `Object` (both are from [Types::Standard](https://metacpan.org/pod/Types%3A%3AStandard)).
 
+## injection\_type
+
+```perl
+injection_type => Object,
+```
+
+By default objects that are injected (see ["inject"](#inject)) are validated
+against ["type"](#type).  Set this to a type that injections validate
+against if it needs to be difference (such as to support mock
+objects).
+
 ## per\_process
 
 ```perl

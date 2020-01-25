@@ -2,6 +2,7 @@ Revision history for Perl extension Object-Depot.
 
 {{$NEXT}}
 
+ - Added the injection_type argument.
  - Silenced redefine warnings when exporting.
  - Allow the exported subroutine to be customized.
  - Renamed Object::Depot::Singleton to Object::Depot::Role.
