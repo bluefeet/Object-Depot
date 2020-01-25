@@ -46,7 +46,7 @@ sub import {
             next;
         }
 
-        croakf(
+        croak sprintf(
             'Unknown export, %s, passed to %s',
             defined($arg) ? qq["$arg"] : 'undef',
             $target,
