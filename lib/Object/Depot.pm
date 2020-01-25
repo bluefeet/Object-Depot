@@ -114,36 +114,6 @@ sub _process_key_arg {
     return $key;
 }
 
-sub _export {
-    my $self = shift;
-    my $package = shift;
-
-    return if !$self->_has_export_name();
-
-    my $name = $self->export_name();
-    my $do_it = $self->always_export();
-
-    foreach my $arg (@_) {
-        if (defined($arg) and $arg eq $name) {
-            $do_it = 1;
-            next;
-        }
-
-        croakf(
-            'Unknown export, %s, passed to %s',
-            defined($arg) ? qq["$arg"] : 'undef',
-            $package,
-        );
-    }
-
-    return if !$do_it;
-
-    my $sub = subname $name => sub{ $self->fetch(@_) };
-    { no strict 'refs'; *{"$package\::$name"} = $sub };
-
-    return;
-}
-
 has _all_objects => (
     is      => 'ro',
     default => sub{ {} },

@@ -32,12 +32,41 @@ my %DEPOTS;
 
 sub import {
     my $class = shift;
-
     my $target = caller();
-    $class->depot->_export( $target, @_ );
+    my $depot = $class->depot();
+
+    return if !$depot->_has_export_name();
+
+    my $name = $depot->export_name();
+    my $do_it = $depot->always_export();
+
+    foreach my $arg (@_) {
+        if (defined($arg) and $arg eq $name) {
+            $do_it = 1;
+            next;
+        }
+
+        croakf(
+            'Unknown export, %s, passed to %s',
+            defined($arg) ? qq["$arg"] : 'undef',
+            $target,
+        );
+    }
+
+    return if !$do_it;
+
+    my $sub = $class->can($name);
+    $sub ||= subname $name => sub{ $class->fetch(@_) };
+
+    {
+        no strict 'refs';
+        no warnings 'redefine';
+        *{"$target\::$name"} = $sub
+    }
 
     return;
 }
+
 
 =head1 CLASS ATTRIBUTES
 
