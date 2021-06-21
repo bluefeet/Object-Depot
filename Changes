@@ -2,6 +2,8 @@ Revision history for Perl extension Object-Depot.
 
 {{$NEXT}}
 
+0.04 2021-06-21T20:34:41Z
+
  - Switch from gpl to the perl 5 license.
  - Add the active_objects method.
  - Give a name to anonymous subs.
