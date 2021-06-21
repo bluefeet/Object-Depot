@@ -4,9 +4,9 @@
       "Aran Clary Deltac <bluefeet@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v3.1.9, CPAN::Meta::Converter version 2.150010",
+   "generated_by" : "Minilla/v3.1.12, CPAN::Meta::Converter version 2.150010",
    "license" : [
-      "gpl_3"
+      "perl_5"
    ],
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
@@ -53,6 +53,7 @@
             "Types::Common::String" : "1.002001",
             "Types::Standard" : "1.002001",
             "namespace::clean" : "0.27",
+            "perl" : "5.008001",
             "strictures" : "2.000003"
          }
       },
@@ -76,6 +77,6 @@
    },
    "version" : "0.03",
    "x_authority" : "cpan:BLUEFEET",
-   "x_serialization_backend" : "JSON::PP version 4.04",
+   "x_serialization_backend" : "JSON::PP version 4.02",
    "x_static_install" : 1
 }
